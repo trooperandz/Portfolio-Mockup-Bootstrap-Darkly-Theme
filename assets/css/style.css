@@ -16,16 +16,15 @@ body {
 	margin: 0 0 80px;
 }
 
+/* Add additional padding to container so that there is space between content and edge of screen */
+.container-fluid {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
 section, aside {
 	border: 1px solid #dddddd;
 	border-radius: 7px;
-}
-
-header {
-	/* Stretch the entire width of the page */
-	width: 100%; 
-	border-bottom: 4px solid #cccccc;
-	border-radius: 0 0 5px 5px;
 }
 
 /* Remove darkly theme navbar bottom margin (too much space between navbar and content) */
@@ -51,13 +50,13 @@ nav ul li {
 	color: #777;
 }
 
+/* Make background of .panel content slightly opaque */
 .panel {
 	opacity: .6;
 }
 
 section {
 	padding: 25px;
-	/*margin-bottom: 45px;*/ /* Do you need to just add this for medium and small columns?? so that there is space under it when it is stacked? */
 }
 
 /* Make the image rotate on hover event */
@@ -98,7 +97,7 @@ hr {
 }
 
 section hr {
-	border-top: 2.5px solid #ccc;
+	border-top: 2px solid #ccc;
 	margin: .6em 0 1.4em 0;
 }
 
@@ -121,8 +120,6 @@ footer {
 	border-bottom-color: #375a7f;
     border-left-color: #375a7f;
     border-right-color: #375a7f;
-	/*border-radius: 5px 5px 0 0;*/
-	/* Dark gray background */
 	background: #375a7f;
 	/* sticky footer styles */
 	position: absolute;
@@ -147,37 +144,13 @@ section h2 {
 aside h3 {
 	margin-top: 0;
 }
-/*
-h1 {
-	font-size: 1.6em;
-	font-weight: bold;
-	padding-bottom: 10px;
-}*/
-/*
-nav h1 {
-	padding: 10px 0px;
-}*/
-/*
-h3 {
-	font-size: 1.2em;
-	font-weight: bold;
-}*/
-/*
-aside h3 {
-	padding-bottom: 10px;
-}*/
-/*
-h4 {
-	font-size: 1.4em;
-	font-weight: bold;
-}*/
 
 article h4 {
 	/* Note: width and top styling are inside of media queries */
 	position: absolute;
 	background-color: #4aaaa5;
 	color: #fff;
-	/*padding: 20px 5px;*/
+	padding: 20px 5px;
 	/* Scoot it over just a little bit, to get it even with the left border of the image */
 	/*margin-left: .53em;*/
 	transition: .8s;
@@ -189,11 +162,6 @@ article h4:hover {
 	color: #ffa500;
 	cursor: pointer;
 }
-/*
-h5 {
-	font-weight: bold;
-	font-size: .9em;
-}*/
 
 /* Note: the footer height is 80px including padding, <h5> and border */
 footer h5 {
@@ -227,39 +195,28 @@ a:hover {
 	color: #008cba;
 }
 
-label {
-	display: inline-block;
-	width: 100%; /* Could not get original max-width: 100%; to work */
-	margin-bottom: 5px;
-	color: #777;
-	font-weight: 200;
+/* Override Bootstrap button padding so there is more space on left and right of value */
+.btn {
+	padding: 10px 30px;
 }
+
 input[type="text"] {
 	background: transparent;
 }
 
+/* Give button a slower transition effect */
 input[type="submit"] {
-	background-color: #008cba;
-	padding: 11px 30px;
-	border: .5px solid #3b8783; /* Apply a slightly darker variant of #4aaaa5; */
-	color: #fff;
 	transition: .7s;
-	font-size: 16px;
 }
 
+/* Make button a slightly lighter color on hover event */
 input[type="submit"]:hover {
 	background-color: #4aaaa5;
 	cursor: pointer;
 }
 
-/* Styling for form inputs */
+/* Custom styling for form inputs */
 .form-control {
-	/*display: block;
-	width: 100%;*/
-	height: 39px;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.42857143;
 	color: #555;
 	border: .5px solid #ccc;
 }
@@ -269,61 +226,18 @@ textarea.form-control {
 	background: transparent;
 }
 
-/* Apply margin to input elements */
-.form-group {
-	margin-bottom: 15px;
-}
-
-.columns {
-	float: left;
-}
-
-/* You can use this if you want the background to flow to the left of your name instead of being white. Add to <header> tag */
-.offset-1 {
-	margin-left: 8.33%;
-}
-
-/* Holds all main page content */
-.container {
-	/* Give the content containers some space from the edge of the screen */
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: auto;
-	margin-right: auto;
-}
-/* Clear the flow of the page after .row, so content does not float up into the row */
-.row::after {
-	content: "";
-	clear: both;
-	display: block;
-}
-/* Try to make the space between the top and bottom of the <section>, <header> and <footer>s equivalent */
-.placeholder {
-	height: 40px; 
-}
-
-.bg-white {
-	background: #fff;
-}
 /* Make the text flow up to the right of the bio pic */
 .bio-pic {
 	float: left;
 	margin-right: 25px;
 }
-/* Make sure that the first <li> element has no left border */
-.first {
-	border: none;
-	/*padding: 0;*/
-}
+
 /* Center all main headings */
 .text-center {
 	text-align: center;
 }
-/* Give the navigation <li> elements separators */
-.li-border-lft {
-	border-left: 1px solid #fff;
-}
 
+/* Prepare the image for a floating label */
 .img-wrapper {
 	position: relative;
 	text-align: center;
@@ -343,8 +257,8 @@ textarea.form-control {
 	margin-top: 0;
 }
 
-/* Apply large-columns grid styles if screen is at least 980px wide */
-@media (min-width: 980px) {
+/* Apply large-column custom styling if screen is at least 980px wide */
+@media (min-width: 1200px) {
 	.margin-lg {
 		margin-bottom: 40px;
 	}
@@ -361,27 +275,28 @@ textarea.form-control {
 		padding-left: 12px;
 	}
 
+	/* Stretch the image the full container width to put it inline with the <hr>, and put extra space between images */
 	article img {
 		width: 100%;
 		padding: 0;
-	}*/
+	}
 
 	/* Special instructions for label distance from top of screen, and label width, due to discrepancies */
-	/*
 	article h4 {
 		top: 68%;
-		width: 96.2%;
+		width: 92.6%;
 		margin: 0;
-	}*/
+	}
 
+	/* Make sure the image scales while on large devices */
 	.bio-pic img {
 		width: 200px;
 		height: 240px;
 	}
 }
 
-/* Apply medium-columns grid styles if screen is at least 768px wide, and less than 980px wide */
-@media (min-width: 767px) and (max-width: 980px) {
+/* Apply medium-columns custom styling if screen is at least 768px wide, and less than 980px wide */
+@media (min-width: 769px) and (max-width: 1200px) {
 	/* Apply margin to main section */
 	.margin-md {
 		margin-bottom: 40px;
@@ -399,27 +314,28 @@ textarea.form-control {
 		padding-left: 12px;
 	}
 
+	/* Stretch the image the full container width to put it inline with the <hr>, and put extra space between images */
 	article img {
 		width: 100%;
 		padding: 0;
 	}
 
 	/* Special instructions for label distance from top of screen, and label width, due to discrepancies */
-	/*
 	article h4 {
-		top: 70%;
-		width: 97%;
+		top: 78%;
+		width: 94.7%;
 		margin: 0;
-	}*/
+	}
 
+	/* Make sure the image scales while on medium devices */
 	.bio-pic img {
 		width: 200px;
 		height: 240px;
 	}
 }
 
-/* Apply small-columns grid styles if screen is at least 640px wide */
-@media (max-width: 640px) {
+/* Apply small-columns custom styling if screen is at least 640px wide */
+@media (max-width: 768px) {
 
 	.margin-sm {
 		margin-bottom: 40px;
@@ -429,15 +345,9 @@ textarea.form-control {
 		position: static;
 	}
 
-	/* Override container left and right padding for main name <h1> when on small screen */
-	
-	header h1 {
-		margin: 0px -15px;
-	}
-
-	/* Space navigation <li>'s out to almost 100% of section on small devices */
+	/* Remvoe border when on small screens */
 	nav ul li {
-    	padding: 0px 8%;
+		border: none;
     }
 
     .img-wrapper {
@@ -451,12 +361,12 @@ textarea.form-control {
     }
 
 	/* Special instructions for image label distance from top of screen, and label width, due to discrepancies */
-	/*
+	
 	article h4 {
-		top: 67%;
-		width: 100%;
+		top: 73%;
+		width: 92.2%;
 		margin: 0;
-	}*/
+	}
 
 	/* Take the margin off of the div so that the picture is centered. Add spacing between bottom and main text */
 	.bio-pic {
