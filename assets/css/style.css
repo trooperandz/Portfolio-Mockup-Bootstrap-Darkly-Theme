@@ -1,0 +1,472 @@
+/* Ensure that padding and border are included in total width and height of all elements for better 'responsive' design */
+* {
+	box-sizing: border-box;
+}
+
+/* For sticky footer */
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	/* Apply a pretty, gray textured background to entire site */
+	background-image: url('../images/micro_carbon.png');
+	/* For sticky footer */
+	margin: 0 0 80px;
+}
+
+section, aside {
+	border: 1px solid #dddddd;
+	border-radius: 7px;
+}
+
+header {
+	/* Stretch the entire width of the page */
+	width: 100%; 
+	border-bottom: 4px solid #cccccc;
+	border-radius: 0 0 5px 5px;
+}
+
+/* Remove darkly theme navbar bottom margin (too much space between navbar and content) */
+.navbar {
+	margin: 0;
+}
+
+nav {
+	text-align: center;
+}
+
+/* Move the nav ul down, inline with the <h1> name */
+nav ul {
+	padding: 10px 0px;
+}
+
+nav ul li {
+	display: inline;
+	padding: 0px 17px;
+	/* Make the border a bit lighter than the text, with rgba.  Use rgb as a browser-incompatibility fallback */
+	border-left: 1px solid rgb(119,119,119);
+	border-left: 1px solid rgba(119,119,119,0.4);
+	color: #777;
+}
+
+.panel {
+	opacity: .6;
+}
+
+section {
+	padding: 25px;
+	/*margin-bottom: 45px;*/ /* Do you need to just add this for medium and small columns?? so that there is space under it when it is stacked? */
+}
+
+/* Make the image rotate on hover event */
+img {
+    border-radius: 7px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+	
+img:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+article img {
+	width: 100%;
+	height: auto;
+	padding: 12px;
+}
+
+aside img {
+	width: 66;
+	height: 66;
+}
+
+/* Heading section line dividers */
+hr {
+	display: block; 
+	height: 1px; 
+	border: 0;
+	padding: 0; 
+}
+
+section hr {
+	border-top: 2.5px solid #ccc;
+	margin: .6em 0 1.4em 0;
+}
+
+aside {
+	padding: 28px;
+}
+
+aside hr {
+	border-top: 1px solid #ccc;
+	margin: .6em 0 1.4em 0;
+}
+
+footer {
+	/* Stretch the entire width of the page */
+	width: 100%;
+	/* Add a top turquise-esque border */
+	border-style: solid;
+	border-top-width: 3px;
+	border-top-color: #4aaaa5;
+	border-bottom-color: #375a7f;
+    border-left-color: #375a7f;
+    border-right-color: #375a7f;
+	/*border-radius: 5px 5px 0 0;*/
+	/* Dark gray background */
+	background: #375a7f;
+	/* sticky footer styles */
+	position: absolute;
+	bottom: 0;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #4aaaa5;
+}
+
+/* Force less margin to center <h1> heading */
+.navbar h1 {
+	margin-top: 18px;
+}
+
+/* Put less space between panel and heading */
+section h2 {
+	margin-top: 0;
+}
+
+/* Put less space between panel and heading */
+aside h3 {
+	margin-top: 0;
+}
+/*
+h1 {
+	font-size: 1.6em;
+	font-weight: bold;
+	padding-bottom: 10px;
+}*/
+/*
+nav h1 {
+	padding: 10px 0px;
+}*/
+/*
+h3 {
+	font-size: 1.2em;
+	font-weight: bold;
+}*/
+/*
+aside h3 {
+	padding-bottom: 10px;
+}*/
+/*
+h4 {
+	font-size: 1.4em;
+	font-weight: bold;
+}*/
+
+article h4 {
+	/* Note: width and top styling are inside of media queries */
+	position: absolute;
+	background-color: #4aaaa5;
+	color: #fff;
+	/*padding: 20px 5px;*/
+	/* Scoot it over just a little bit, to get it even with the left border of the image */
+	/*margin-left: .53em;*/
+	transition: .8s;
+}
+
+article h4:hover {
+	background-color: #008cba;
+	opacity: .8;
+	color: #ffa500;
+	cursor: pointer;
+}
+/*
+h5 {
+	font-weight: bold;
+	font-size: .9em;
+}*/
+
+/* Note: the footer height is 80px including padding, <h5> and border */
+footer h5 {
+	color: #ccc;
+	padding: 15px;
+}
+
+aside ul {
+	margin-top: 26px;
+	/* Override left padding.  Couldn't find source */
+	padding-left: 0;
+}
+
+aside ul li {
+	display: inline;
+	padding: 2%;
+}
+
+p {
+	line-height: 1.5;
+	padding: 1px; /* Columns must have some content for grid to work*/
+}
+
+a {
+	text-decoration: none;
+	color: #777;
+	transition: .5s; /* Make a slow transition to #4aaa5; on hover event */
+}
+
+a:hover {
+	color: #008cba;
+}
+
+label {
+	display: inline-block;
+	width: 100%; /* Could not get original max-width: 100%; to work */
+	margin-bottom: 5px;
+	color: #777;
+	font-weight: 200;
+}
+input[type="text"] {
+	background: transparent;
+}
+
+input[type="submit"] {
+	background-color: #008cba;
+	padding: 11px 30px;
+	border: .5px solid #3b8783; /* Apply a slightly darker variant of #4aaaa5; */
+	color: #fff;
+	transition: .7s;
+	font-size: 16px;
+}
+
+input[type="submit"]:hover {
+	background-color: #4aaaa5;
+	cursor: pointer;
+}
+
+/* Styling for form inputs */
+.form-control {
+	/*display: block;
+	width: 100%;*/
+	height: 39px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	border: .5px solid #ccc;
+}
+
+textarea.form-control {
+	height: 120px;
+	background: transparent;
+}
+
+/* Apply margin to input elements */
+.form-group {
+	margin-bottom: 15px;
+}
+
+.columns {
+	float: left;
+}
+
+/* You can use this if you want the background to flow to the left of your name instead of being white. Add to <header> tag */
+.offset-1 {
+	margin-left: 8.33%;
+}
+
+/* Holds all main page content */
+.container {
+	/* Give the content containers some space from the edge of the screen */
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Clear the flow of the page after .row, so content does not float up into the row */
+.row::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/* Try to make the space between the top and bottom of the <section>, <header> and <footer>s equivalent */
+.placeholder {
+	height: 40px; 
+}
+
+.bg-white {
+	background: #fff;
+}
+/* Make the text flow up to the right of the bio pic */
+.bio-pic {
+	float: left;
+	margin-right: 25px;
+}
+/* Make sure that the first <li> element has no left border */
+.first {
+	border: none;
+	/*padding: 0;*/
+}
+/* Center all main headings */
+.text-center {
+	text-align: center;
+}
+/* Give the navigation <li> elements separators */
+.li-border-lft {
+	border-left: 1px solid #fff;
+}
+
+.img-wrapper {
+	position: relative;
+	text-align: center;
+}
+
+.img-wrapper.first {
+	margin-top: 0;
+}
+
+.port-img-wrapper {
+	text-align: center;
+	margin-top: 30px;
+	position: relative; /* Have to have this so that the picture will float up in it */
+}
+
+.port-img-wrapper.first {
+	margin-top: 0;
+}
+
+/* Apply large-columns grid styles if screen is at least 980px wide */
+@media (min-width: 980px) {
+	.margin-lg {
+		margin-bottom: 40px;
+	}
+
+	.img-wrapper {
+		margin-bottom: 24px;
+	}
+
+	.img-wrapper.first {
+		padding-right: 12px;
+	}
+
+	.img-wrapper.second {
+		padding-left: 12px;
+	}
+
+	article img {
+		width: 100%;
+		padding: 0;
+	}*/
+
+	/* Special instructions for label distance from top of screen, and label width, due to discrepancies */
+	/*
+	article h4 {
+		top: 68%;
+		width: 96.2%;
+		margin: 0;
+	}*/
+
+	.bio-pic img {
+		width: 200px;
+		height: 240px;
+	}
+}
+
+/* Apply medium-columns grid styles if screen is at least 768px wide, and less than 980px wide */
+@media (min-width: 767px) and (max-width: 980px) {
+	/* Apply margin to main section */
+	.margin-md {
+		margin-bottom: 40px;
+	}
+
+	.img-wrapper {
+		margin-bottom: 24px;
+	}
+
+	.img-wrapper.first {
+		padding-right: 12px;
+	}
+
+	.img-wrapper.second {
+		padding-left: 12px;
+	}
+
+	article img {
+		width: 100%;
+		padding: 0;
+	}
+
+	/* Special instructions for label distance from top of screen, and label width, due to discrepancies */
+	/*
+	article h4 {
+		top: 70%;
+		width: 97%;
+		margin: 0;
+	}*/
+
+	.bio-pic img {
+		width: 200px;
+		height: 240px;
+	}
+}
+
+/* Apply small-columns grid styles if screen is at least 640px wide */
+@media (max-width: 640px) {
+
+	.margin-sm {
+		margin-bottom: 40px;
+	}
+
+	header {
+		position: static;
+	}
+
+	/* Override container left and right padding for main name <h1> when on small screen */
+	
+	header h1 {
+		margin: 0px -15px;
+	}
+
+	/* Space navigation <li>'s out to almost 100% of section on small devices */
+	nav ul li {
+    	padding: 0px 8%;
+    }
+
+    .img-wrapper {
+    	margin-bottom: 30px;
+    }
+
+    /* Stretch the image the full container width to put it inline with the <hr>, and put extra space between images */
+    article img {
+    	width: 100%;
+    	padding: 0;
+    }
+
+	/* Special instructions for image label distance from top of screen, and label width, due to discrepancies */
+	/*
+	article h4 {
+		top: 67%;
+		width: 100%;
+		margin: 0;
+	}*/
+
+	/* Take the margin off of the div so that the picture is centered. Add spacing between bottom and main text */
+	.bio-pic {
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	/* Make sure the image scales while on small devices */
+	.bio-pic img {
+		width: 100%;
+		height: auto;
+	}
+}
